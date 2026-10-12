@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" class="h-full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeVault — Déposer un fichier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+
+</head>
+<body class="h-full flex overflow-hidden">
+
+<!-- SIDEBAR -->
+<aside class="sv-sidebar w-64 flex flex-col shrink-0 sticky top-0 h-screen z-20 select-none">
+  <div class="h-16 flex items-center px-6 gap-3" style="border-bottom:1px solid var(--border-sidebar)">
+    <div class="w-9 h-9 rounded-xl sv-icon flex items-center justify-center shrink-0 sv-text-primary">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l7 3.5v5.5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V5.5L12 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 12a2.5 2.5 0 015 0v1.5H9.5V12z"/></svg>
+    </div>
+    <div>
+      <span class="text-base font-bold tracking-tight block leading-tight sv-text-primary">SafeVault</span>
+      <span class="text-[10px] uppercase tracking-wider sv-text-muted font-medium">Cloud Sécurisé</span>
+    </div>
+  </div>
+  <nav class="flex-1 px-4 py-5 space-y-1 overflow-y-auto">
+    <a href="index.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span>Accueil</span>
+    </a>
+    <a href="documents.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+      <span>Mes documents</span>
+    </a>
+    <!-- ACTIF -->
+    <a href="deposer.html" aria-current="page" class="sv-nav-active flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-semibold transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+      <span>Déposer un fichier</span>
+    </a>
+    <a href="partager.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+      <span>Partager</span>
+    </a>
+    <a href="parametres.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <span>Paramètres</span>
+    </a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+  <header class="sv-header h-16 px-8 flex items-center justify-end shrink-0 z-10" style="position:sticky;top:0">
+    <div class="flex items-center gap-3 px-3 py-1.5 rounded-full sv-card cursor-pointer" style="border:1px solid var(--border-default)">
+      <div class="h-8 w-8 rounded-full sv-icon flex items-center justify-center shrink-0 text-[10px] font-black sv-text-primary">OK</div>
+      <span class="text-sm font-medium sv-text-primary">Oswald Kds</span>
+      <svg class="w-4 h-4 sv-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </header>
+
+  <main class="flex-1 overflow-y-auto p-8">
+    <div class="max-w-3xl mx-auto space-y-6">
+
+      <!-- Upload card: Chiffrement badge + Dropzone + Selected file -->
+      <div class="sv-card rounded-3xl overflow-hidden">
+
+        <!-- Chiffrement badge -->
+        <div class="px-6 pt-5 pb-2">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold sv-badge px-3 py-1.5 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full inline-block" style="background:var(--text-accent) inline-block"></span>
+            Chiffrement à la volée
+          </span>
+        </div>
+
+        <!-- Dropzone -->
+        <div id="dropzone" class="sv-dropzone mx-6 mb-4 rounded-2xl p-10 text-center transition-all cursor-pointer"
+             style="border-style:dashed"
+             ondragover="event.preventDefault();this.style.borderColor='var(--border-strong)'"
+             ondragleave="this.style.borderColor=''"
+             onclick="document.getElementById('file-input').click()">
+          <div class="w-16 h-16 rounded-full sv-icon flex items-center justify-center mx-auto mb-5 sv-text-primary">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+          </div>
+          <p class="text-base font-semibold sv-text-primary">Glissez votre fichier ici</p>
+          <p class="text-sm sv-text-muted mt-1">ou importez directement depuis votre espace de travail</p>
+          <button class="mt-5 sv-btn-secondary px-5 py-2 rounded-xl text-sm font-medium flex items-center gap-2 mx-auto cursor-pointer" style="border:1px solid var(--border-default)" onclick="event.stopPropagation();document.getElementById('file-input').click()">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+            Choisir un fichier
+          </button>
+          <input type="file" id="file-input" class="hidden" multiple onchange="handleFileSelect(this.files)">
+        </div>
+
+        <!-- Selected file row -->
+        <div id="selected-file" class="mx-6 mb-5 flex items-center gap-3 p-3.5 rounded-2xl" style="display:none;border:1px solid var(--border-default);background:var(--bg-row-hover)">
+          <div class="w-10 h-10 rounded-xl sv-icon sv-text-primary flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold sv-text-primary truncate" id="selected-name"></p>
+            <p class="text-xs sv-text-muted" id="selected-meta"></p>
+          </div>
+          <button onclick="clearFile()" class="flex items-center gap-1.5 text-xs sv-text-muted hover:sv-text-primary transition px-2.5 py-1 rounded-lg" style="border:1px solid var(--border-default)">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            Retirer
+          </button>
+        </div>
+      </div>
+
+      <!-- Form card -->
+      <div class="sv-card rounded-3xl p-6 space-y-5">
+
+        <!-- Nom du fichier -->
+        <div class="space-y-1.5">
+          <label class="text-sm font-medium sv-text-primary block">Nom du fichier</label>
+          <div class="relative flex items-center">
+            <input type="text" id="file-name" class="sv-input w-full px-4 py-2.5 pr-10 rounded-xl text-sm" placeholder="Nom du fichier (facultatif)" value="">
+            <button class="absolute right-3 sv-text-muted hover:sv-text-primary transition" onclick="document.getElementById('file-name').value=''" style="background:transparent;border:none">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dossier -->
+        <div class="space-y-1.5">
+          <label class="text-sm font-medium sv-text-primary block">Dossier</label>
+          <div class="relative flex items-center">
+            <select class="sv-input w-full appearance-none px-4 py-2.5 pr-10 rounded-xl text-sm cursor-pointer" style="background:var(--bg-input)">
+              <option value="personnel">Personnel</option>
+              <option value="projets" selected>Projets</option>
+              <option value="archives">Archives confidentielles</option>
+              <option value="finances">Finances &amp; Juridique</option>
+            </select>
+            <div class="pointer-events-none absolute right-3 sv-text-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partager avec -->
+        <div class="space-y-1.5">
+          <label class="text-sm font-medium sv-text-primary block">
+            Partager avec <span class="sv-text-muted font-normal">(optionnel)</span>
+          </label>
+          <div class="relative flex items-center">
+            <svg class="absolute left-3 w-4 h-4 sv-text-muted pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            <input type="text" class="sv-input w-full pl-10 pr-4 py-2.5 rounded-xl text-sm" placeholder="Ajouter des emails (ex. alex@entreprise.com)">
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-between pt-1">
+          <button class="flex items-center gap-1.5 text-sm sv-text-secondary hover:sv-text-primary transition font-medium" style="background:transparent;border:none">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+            Plus d'options
+          </button>
+          <div class="flex items-center gap-3">
+            <button class="sv-btn-secondary px-5 py-2 rounded-xl text-sm font-medium cursor-pointer" style="border:1px solid var(--border-default)">
+              Annuler
+            </button>
+            <button id="deposit-btn" type="button" class="sv-btn-primary px-6 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+              Déposer
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+function handleFileSelect(files) {
+  if (!files.length) return;
+  const f = files[0];
+  document.getElementById('selected-file').style.display = 'flex';
+  const ext = f.name.split('.').pop().toUpperCase().slice(0,3);
+  const size = f.size > 1048576 ? (f.size/1048576).toFixed(1)+' Mo' : (f.size/1024).toFixed(0)+' Ko';
+  document.getElementById('selected-name').textContent = f.name;
+  document.getElementById('selected-meta').textContent = size;
+  const namePart = f.name.split('.').slice(0,-1).join('.');
+  document.getElementById('file-name').value = namePart || f.name;
+}
+function clearFile() {
+  document.getElementById('selected-name').textContent = '';
+  document.getElementById('selected-meta').textContent = '';
+  document.getElementById('selected-file').style.display = 'none';
+  document.getElementById('file-name').value = '';
+  document.getElementById('file-input').value = '';
+}
+</script>
+
+<script>
+(function () {
+  function notify(message, type) {
+    let toast = document.getElementById('sv-notification');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'sv-notification';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      Object.assign(toast.style, {
+        position: 'fixed', right: '24px', top: '24px', zIndex: '99999',
+        maxWidth: 'min(420px, calc(100vw - 32px))', padding: '15px 18px',
+        borderRadius: '14px', boxShadow: '0 12px 35px rgba(0,0,0,.25)',
+        fontSize: '14px', fontWeight: '600', lineHeight: '1.45'
+      });
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.style.background = type === 'error' ? '#fee2e2' : '#dcfce7';
+    toast.style.color = type === 'error' ? '#991b1b' : '#166534';
+    toast.style.border = '1px solid ' + (type === 'error' ? '#fca5a5' : '#86efac');
+    toast.style.display = 'block';
+    clearTimeout(window.svToastTimer);
+    window.svToastTimer = setTimeout(() => { toast.style.display = 'none'; }, 4500);
+  }
+
+  function validEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+  }
+
+  const depositButton = document.getElementById('deposit-btn');
+  if (depositButton) {
+    depositButton.addEventListener('click', function () {
+      const emailInput = document.querySelector('input[type="email"], input[placeholder*="emails"]');
+      if (emailInput && emailInput.value.trim() && !validEmail(emailInput.value)) {
+        notify("Format d'adresse e-mail invalide. Vérifiez l'adresse saisie.", 'error');
+        emailInput.focus();
+        return;
+      }
+      const fileInput = document.getElementById('file-input');
+      const fileName = fileInput?.files?.[0]?.name || '';
+      if (!fileName) {
+        notify('Veuillez sélectionner un fichier avant de le déposer.', 'error');
+        return;
+      }
+      const nameField = document.getElementById('file-name');
+      const folderField = document.querySelector('select');
+      sessionStorage.setItem('svOperation', JSON.stringify({
+        type: 'deposit', fileName: nameField?.value.trim() || fileName,
+        folder: folderField?.selectedOptions?.[0]?.textContent || 'Personnel',
+        originalName: fileName
+      }));
+      window.location.href = 'confirmation.html?type=deposit';
+    });
+  }
+
+  const shareButton = document.getElementById('share-btn');
+  if (shareButton) {
+    shareButton.addEventListener('click', function () {
+      const emailInput = document.getElementById('recipient-email');
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email) {
+        notify('Veuillez saisir l’adresse e-mail du destinataire.', 'error');
+        emailInput?.focus();
+        return;
+      }
+      if (!validEmail(email)) {
+        notify("Format d'adresse e-mail invalide. Exemple : nom@domaine.com.", 'error');
+        emailInput?.focus();
+        return;
+      }
+      notify('Partage confirmé pour ' + email + ' (simulation : aucun envoi réel effectué).', 'success');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

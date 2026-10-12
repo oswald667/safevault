@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" class="h-full">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeVault — Partager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+
+</head>
+<body class="h-full flex overflow-hidden">
+
+<!-- SIDEBAR -->
+<aside class="sv-sidebar w-64 flex flex-col shrink-0 sticky top-0 h-screen z-20 select-none">
+  <div class="h-16 flex items-center px-6 gap-3" style="border-bottom:1px solid var(--border-sidebar)">
+    <div class="w-9 h-9 rounded-xl sv-icon flex items-center justify-center shrink-0 sv-text-primary">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l7 3.5v5.5c0 5-3.5 9.5-7 11-3.5-1.5-7-6-7-11V5.5L12 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 12a2.5 2.5 0 015 0v1.5H9.5V12z"/></svg>
+    </div>
+    <div>
+      <span class="text-base font-bold tracking-tight block leading-tight sv-text-primary">SafeVault</span>
+      <span class="text-[10px] uppercase tracking-wider sv-text-muted font-medium">Cloud Sécurisé</span>
+    </div>
+  </div>
+  <nav class="flex-1 px-4 py-5 space-y-1 overflow-y-auto">
+    <a href="index.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <span>Accueil</span>
+    </a>
+    <a href="documents.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+      <span>Mes documents</span>
+    </a>
+    <a href="deposer.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+      <span>Déposer un fichier</span>
+    </a>
+    <!-- ACTIF -->
+    <a href="partager.html" aria-current="page" class="sv-nav-active flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-semibold transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+      <span>Partager</span>
+    </a>
+    <a href="parametres.html" class="sv-nav-item flex items-center gap-3.5 px-4 py-3 rounded-2xl text-sm font-medium transition-all">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      <span>Paramètres</span>
+    </a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+  <header class="sv-header h-16 px-8 flex items-center justify-end shrink-0 z-10" style="position:sticky;top:0">
+    <div class="flex items-center gap-3 px-3 py-1.5 rounded-full sv-card cursor-pointer" style="border:1px solid var(--border-default)">
+      <div class="h-8 w-8 rounded-full sv-icon flex items-center justify-center shrink-0 text-[10px] font-black sv-text-primary">OK</div>
+      <span class="text-sm font-medium sv-text-primary">Oswald Kds</span>
+      <svg class="w-4 h-4 sv-text-muted" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </header>
+
+  <main class="flex-1 overflow-y-auto p-8">
+    <div class="max-w-3xl mx-auto space-y-6">
+
+      <!-- Page title -->
+      <div>
+        <h2 class="text-2xl font-bold sv-text-primary">Partager un fichier</h2>
+        <p class="text-sm sv-text-muted mt-1">Transférez vos documents ultra-confidentiels avec chiffrement de bout en bout et révocation instantanée à distance.</p>
+      </div>
+
+      <!-- Main form card -->
+      <div class="sv-card rounded-3xl p-6 space-y-6">
+
+        <!-- Step 1: Sélectionner un fichier -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full sv-icon flex items-center justify-center text-xs font-bold sv-text-primary shrink-0">1</div>
+            <h3 class="text-base font-semibold sv-text-primary">Sélectionner un fichier</h3>
+          </div>
+
+          <!-- Choix d'un fichier local ou depuis le coffre (si disponible) -->
+          <div class="sv-file-picker p-4 rounded-2xl" style="border:1px dashed var(--border-strong)">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+              <div class="w-11 h-11 rounded-xl sv-icon sv-text-primary flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p id="share-file-name" class="text-sm font-semibold sv-text-primary">Aucun fichier sélectionné</p>
+                <p id="share-file-meta" class="text-xs sv-text-muted mt-1">Choisissez un fichier sur votre appareil pour continuer.</p>
+              </div>
+              <button id="choose-share-file" type="button" class="sv-btn-secondary px-4 py-2 rounded-xl text-sm font-medium">Parcourir les fichiers</button>
+              <input type="file" id="share-file-input" class="hidden">
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <p class="text-xs sv-text-muted">Les fichiers du coffre seront proposés ici lorsqu'un coffre sera connecté.</p>
+            <span class="text-xs sv-text-muted shrink-0">Max. 2 Go (simulation)</span>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid var(--border-divider)"></div>
+
+        <!-- Step 2: Destinataire -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full sv-icon flex items-center justify-center text-xs font-bold sv-text-primary shrink-0">2</div>
+            <h3 class="text-base font-semibold sv-text-primary">Destinataire</h3>
+          </div>
+          <div class="relative flex items-center">
+            <input type="email" id="recipient-email" class="sv-input w-full px-4 py-3 pr-10 rounded-xl text-sm" placeholder="ex. destinataire@entreprise.com" autocomplete="email" required>
+            <div class="absolute right-3 sv-text-muted">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+          </div>
+          <p class="text-xs sv-text-muted flex items-center gap-1">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Entrer l'adresse email du destinataire autorisé à déchiffrer ce payload.
+          </p>
+        </div>
+
+        <div style="border-top:1px solid var(--border-divider)"></div>
+
+        <!-- Step 3: Message (Optionnel) -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-full sv-icon flex items-center justify-center text-xs font-bold sv-text-primary shrink-0">3</div>
+              <h3 class="text-base font-semibold sv-text-primary">Message <span class="sv-text-muted font-normal text-sm">(Optionnel)</span></h3>
+            </div>
+            <span class="text-xs sv-text-muted" id="char-count">0 / 250 caractères</span>
+          </div>
+          <textarea
+            id="message-text"
+            class="sv-input w-full px-4 py-3 rounded-xl text-sm resize-none"
+            rows="5"
+            placeholder="Ajoutez une note d'instructions ou une clé contextuelle transmise sous canal sécurisé..."
+            oninput="document.getElementById('char-count').textContent = this.value.length + ' / 250 caractères'"
+            maxlength="250"></textarea>
+          <p class="text-xs sv-text-muted">Ce message sera chiffré avant d'être encapsulé dans l'enveloppe cryptographique.</p>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="flex items-center justify-end gap-3 pt-2" style="border-top:1px solid var(--border-divider)">
+          <button class="sv-btn-secondary px-6 py-2.5 rounded-xl text-sm font-medium flex items-center gap-2 cursor-pointer" style="border:1px solid var(--border-default)">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            Annuler
+          </button>
+          <button id="share-btn" type="button" class="sv-btn-primary px-6 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Partager
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<script>
+(function () {
+  function notify(message, type) {
+    let toast = document.getElementById('sv-notification');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'sv-notification';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      Object.assign(toast.style, {
+        position: 'fixed', right: '24px', top: '24px', zIndex: '99999',
+        maxWidth: 'min(420px, calc(100vw - 32px))', padding: '15px 18px',
+        borderRadius: '14px', boxShadow: '0 12px 35px rgba(0,0,0,.25)',
+        fontSize: '14px', fontWeight: '600', lineHeight: '1.45'
+      });
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.style.background = type === 'error' ? '#fee2e2' : '#dcfce7';
+    toast.style.color = type === 'error' ? '#991b1b' : '#166534';
+    toast.style.border = '1px solid ' + (type === 'error' ? '#fca5a5' : '#86efac');
+    toast.style.display = 'block';
+    clearTimeout(window.svToastTimer);
+    window.svToastTimer = setTimeout(() => { toast.style.display = 'none'; }, 4500);
+  }
+
+  function validEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+  }
+
+  const localFileInput = document.getElementById('share-file-input');
+  document.getElementById('choose-share-file')?.addEventListener('click', () => localFileInput.click());
+  localFileInput?.addEventListener('change', () => {
+    const file = localFileInput.files && localFileInput.files[0];
+    if (!file) return;
+    document.getElementById('share-file-name').textContent = file.name;
+    document.getElementById('share-file-meta').textContent = file.size >= 1048576 ? (file.size / 1048576).toFixed(1) + ' Mo' : Math.max(1, Math.round(file.size / 1024)) + ' Ko';
+  });
+
+  const shareButton = document.getElementById('share-btn');
+  if (shareButton) {
+    shareButton.addEventListener('click', function () {
+      const emailInput = document.getElementById('recipient-email');
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email) {
+        notify('Veuillez saisir l’adresse e-mail du destinataire.', 'error');
+        emailInput?.focus();
+        return;
+      }
+      if (!validEmail(email)) {
+        notify("Format d'adresse e-mail invalide. Exemple : nom@domaine.com.", 'error');
+        emailInput?.focus();
+        return;
+      }
+      const selectedFile = localFileInput?.files?.[0];
+      if (!selectedFile) {
+        notify('Veuillez choisir un fichier depuis votre appareil avant de partager.', 'error');
+        document.getElementById('choose-share-file')?.focus();
+        return;
+      }
+      sessionStorage.setItem('svOperation', JSON.stringify({
+        type: 'share', email: email, fileName: selectedFile.name, fileSize: selectedFile.size
+      }));
+      window.location.href = 'confirmation.html?type=share';
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
